@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -100,7 +100,7 @@ abstract class OAuth1 extends AbstractAdapter implements AdapterInterface
     *
     * @var boolean
     */
-    protected $AuthorizeUrlParameters = [***REMOVED***
+    protected $AuthorizeUrlParameters = [];
 
     /**
     * @var string
@@ -110,12 +110,12 @@ abstract class OAuth1 extends AbstractAdapter implements AdapterInterface
     /**
     * @var array
     */
-    protected $requestTokenParameters = [***REMOVED***
+    protected $requestTokenParameters = [];
 
     /**
     * @var array
     */
-    protected $requestTokenHeaders = [***REMOVED***
+    protected $requestTokenHeaders = [];
 
     /**
     * @var string
@@ -125,22 +125,22 @@ abstract class OAuth1 extends AbstractAdapter implements AdapterInterface
     /**
     * @var array
     */
-    protected $tokenExchangeParameters = [***REMOVED***
+    protected $tokenExchangeParameters = [];
 
     /**
     * @var array
     */
-    protected $tokenExchangeHeaders = [***REMOVED***
+    protected $tokenExchangeHeaders = [];
 
     /**
     * @var array
     */
-    protected $apiRequestParameters = [***REMOVED***
+    protected $apiRequestParameters = [];
 
     /**
     * @var array
     */
-    protected $apiRequestHeaders = [***REMOVED***
+    protected $apiRequestHeaders = [];
 
     /**
     * {@inheritdoc}
@@ -565,7 +565,7 @@ abstract class OAuth1 extends AbstractAdapter implements AdapterInterface
     {
         $signing_parameters = $parameters;
         if ($multipart) {
-            $signing_parameters = [***REMOVED***
+            $signing_parameters = [];
         }
 
         $request = OAuthRequest::from_consumer_and_token(

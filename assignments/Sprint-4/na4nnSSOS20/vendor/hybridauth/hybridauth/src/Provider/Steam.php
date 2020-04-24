@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,10 +17,10 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
- *   ***REMOVED*** 'secret' => 'steam-api-key' ]
- *   ***REMOVED***
+ *       'keys'     => [ 'secret' => 'steam-api-key' ]
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Steam( $config );
  *
@@ -47,7 +47,7 @@ class Steam extends OpenID
         $userProfile->identifier = str_ireplace([
             'http://steamcommunity.com/openid/id/',
             'https://steamcommunity.com/openid/id/',
-    ***REMOVED***, '', $userProfile->identifier);
+        ], '', $userProfile->identifier);
 
         if (!$userProfile->identifier) {
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
@@ -96,7 +96,7 @@ class Steam extends OpenID
 
         $data = new Data\Collection($data);
 
-        $userProfile = [***REMOVED***
+        $userProfile = [];
 
         $userProfile['displayName'] = (string)$data->get('personaname');
         $userProfile['firstName'] = (string)$data->get('realname');
@@ -124,7 +124,7 @@ class Steam extends OpenID
 
         $data = new Data\Collection($data);
 
-        $userProfile = [***REMOVED***
+        $userProfile = [];
 
         $userProfile['displayName'] = (string)$data->get('steamID');
         $userProfile['firstName'] = (string)$data->get('realname');

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * This simple example illustrate how to authenticate users with GitHub.
 *
@@ -54,7 +54,7 @@ include 'vendor/autoload.php';
  * https://developer.github.com/v3/oauth/#scopes
  */
 
-***REMOVED***
+$config = [
     'callback' => 'https://path/to/hybridauth/examples/example_01.php', // or Hybridauth\HttpClient\Util::getCurrentUrl()
 
     'keys' => [ 'id' => 'your-app-id', 'secret' => 'your-app-secret' ], // Your Github application credentials
@@ -79,8 +79,8 @@ include 'vendor/autoload.php';
 
             // set a custom user agent
             CURLOPT_USERAGENT      => ''
-    ***REMOVED*** */
-***REMOVED***
+        ] */
+];
 
 /**
  * Step 3: Instantiate Github Adapter

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -18,10 +18,10 @@ use Hybridauth\User\Profile;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => ['id' => '', 'secret' => ''],
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Yandex($config);
  *

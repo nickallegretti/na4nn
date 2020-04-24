@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -51,7 +51,7 @@ class Disqus extends OAuth2
 
         $this->apiRequestParameters = [
             'api_key' => $this->clientId, 'api_secret' => $this->clientSecret
-    ***REMOVED***;
+        ];
     }
 
     /**

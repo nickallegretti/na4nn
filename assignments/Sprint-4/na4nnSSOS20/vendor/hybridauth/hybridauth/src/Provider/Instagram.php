@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -62,7 +62,7 @@ class Instagram extends OAuth2
     {
         $response = $this->apiRequest('me', 'GET', [
             'fields' => 'id,username,account_type,media_count',
-    ***REMOVED***);
+        ]);
 
         $data = new Collection($response);
         if (!$data->exists('id')) {
@@ -76,7 +76,7 @@ class Instagram extends OAuth2
         $userProfile->data = [
             'account_type' => $data->get('account_type'),
             'media_count' => $data->get('media_count'),
-    ***REMOVED***;
+        ];
 
         return $userProfile;
     }
@@ -107,13 +107,13 @@ class Instagram extends OAuth2
                 'permalink',
                 'timestamp',
                 'username',
-        ***REMOVED***;
+            ];
         }
 
         $params = [
             'fields' => implode(',', $fields),
             'limit' => $limit,
-    ***REMOVED***;
+        ];
         if ($pageId !== null) {
             $params['after'] = $pageId;
         }
@@ -153,12 +153,12 @@ class Instagram extends OAuth2
                 'permalink',
                 'timestamp',
                 'username',
-        ***REMOVED***;
+            ];
         }
 
         $response = $this->apiRequest($mediaId, 'GET', [
             'fields' => implode(',', $fields),
-    ***REMOVED***);
+        ]);
 
         $data = new Collection($response);
         if (!$data->exists('id')) {

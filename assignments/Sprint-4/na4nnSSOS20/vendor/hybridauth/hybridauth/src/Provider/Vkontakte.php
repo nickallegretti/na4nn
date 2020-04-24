@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -19,10 +19,10 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => ['id' => '', 'secret' => ''],
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Vkontakte($config);
  *
@@ -111,7 +111,7 @@ class Vkontakte extends OAuth2
 
         $response = $this->apiRequest('users.get', 'GET', [
             'fields' => 'screen_name,sex,education,bdate,has_photo,' . $photoField,
-    ***REMOVED***);
+        ]);
 
         if (property_exists($response, 'error')) {
             throw new UnexpectedApiResponseException($response->error->error_msg);
@@ -135,14 +135,14 @@ class Vkontakte extends OAuth2
         // Handle b-date.
         if ($data->get('bdate')) {
             $bday = explode('.', $data->get('bdate'));
-            $userProfile->birthDay = (int) $bday[0***REMOVED***
-            $userProfile->birthMonth = (int) $bday[1***REMOVED***
-            $userProfile->birthYear = (int) $bday[2***REMOVED***
+            $userProfile->birthDay = (int) $bday[0];
+            $userProfile->birthMonth = (int) $bday[1];
+            $userProfile->birthYear = (int) $bday[2];
         }
 
         $userProfile->data = [
             'education' => $data->get('education'),
-    ***REMOVED***;
+        ];
 
         $screen_name = static::URL . ($data->get('screen_name') ?: 'id' . $data->get('id'));
         $userProfile->profileURL  = $screen_name;
@@ -167,14 +167,14 @@ class Vkontakte extends OAuth2
     {
         $response = $this->apiRequest('friends.get', 'GET', [
             'fields' => 'uid,name,photo_200_orig',
-    ***REMOVED***);
+        ]);
 
         $data = new Data\Collection($response);
         if (!$data->exists('response')) {
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
         }
 
-        $contacts = [***REMOVED***
+        $contacts = [];
         if (!$data->filter('response')->filter('items')->isEmpty()) {
             foreach ($data->filter('response')->filter('items')->toArray() as $item) {
                 $contacts[] = $this->fetchUserContact($item);

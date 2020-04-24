@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,22 +17,22 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
- *   ***REMOVED*** 'id' => '', 'secret' => '' ],
+ *       'keys'     => [ 'id' => '', 'secret' => '' ],
  *       'scope'    => 'https://www.googleapis.com/auth/userinfo.profile',
  *
  *        // google's custom auth url params
- *   ***REMOVED***
- *  ***REMOVED***
+ *       'authorize_url_parameters' => [
+ *              'approval_prompt' => 'force', // to pass only when you need to acquire a new refresh token.
  *              'access_type'     => ..,      // is set to 'offline' by default
  *              'hd'              => ..,
  *              'state'           => ..,
  *              // etc.
- *   ***REMOVED***
- *   ***REMOVED***
+ *       ]
+ *   ];
  *
- *   ***REMOVED***
+ *   $adapter = new Hybridauth\Provider\Google( $config );
  *
  *   try {
  *       $adapter->authenticate();
@@ -80,13 +80,13 @@ class Google extends OAuth2
         parent::initialize();
 
         $this->AuthorizeUrlParameters += [
-***REMOVED***
-    ***REMOVED***;
+            'access_type' => 'offline'
+        ];
 
         $this->tokenRefreshParameters += [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -137,7 +137,7 @@ class Google extends OAuth2
             return $this->getGmailContacts($parameters);
         }
 
-        return [***REMOVED***
+        return [];
     }
 
     /**
@@ -157,10 +157,10 @@ class Google extends OAuth2
         $response = $this->apiRequest($url);
 
         if (! $response) {
-            return [***REMOVED***
+            return [];
         }
 
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         if (isset($response->feed->entry)) {
             foreach ($response->feed->entry as $idx => $entry) {

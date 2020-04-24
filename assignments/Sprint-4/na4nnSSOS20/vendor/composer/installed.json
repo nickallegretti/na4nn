@@ -32,13 +32,13 @@
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
-    ***REMOVED***,
+        ],
         "authors": [
             {
                 "name": "Miled",
                 "email": "hybridauth@gmail.com"
             }
-    ***REMOVED***,
+        ],
         "description": "PHP Social Authentication Library",
         "homepage": "https://hybridauth.github.io",
         "keywords": [
@@ -51,6 +51,6 @@
             "oauth",
             "social",
             "twitter"
-    ***REMOVED***
+        ]
     }
 ]

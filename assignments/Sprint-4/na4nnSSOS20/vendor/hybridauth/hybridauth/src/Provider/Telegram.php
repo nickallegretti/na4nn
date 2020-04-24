@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace Hybridauth\Provider;
 
@@ -16,10 +16,10 @@ use Hybridauth\Exception\UnexpectedApiResponseException;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => ['id' => 'your_bot_name', 'secret' => 'your_bot_token'],
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Telegram($config);
  *
@@ -109,9 +109,9 @@ class Telegram extends AbstractAdapter implements AdapterInterface
     {
         $auth_data = $this->parseAuthData();
 
-        $check_hash = $auth_data['hash'***REMOVED***
+        $check_hash = $auth_data['hash'];
         unset($auth_data['hash']);
-        $data_check_arr = [***REMOVED***
+        $data_check_arr = [];
 
         foreach ($auth_data as $key => $value) {
             if (!empty($value)) {
@@ -177,6 +177,6 @@ HTML
             'photo_url'     => filter_input(INPUT_GET, 'photo_url'),
             'auth_date'     => filter_input(INPUT_GET, 'auth_date'),
             'hash'          => filter_input(INPUT_GET, 'hash'),
-    ***REMOVED***;
+        ];
     }
 }

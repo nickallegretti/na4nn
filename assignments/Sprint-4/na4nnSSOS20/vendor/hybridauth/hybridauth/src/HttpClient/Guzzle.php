@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -40,14 +40,14 @@ class Guzzle implements HttpClientInterface
     *
     * @var array
     */
-    protected $requestArguments = [***REMOVED***
+    protected $requestArguments = [];
 
     /**
     * Default request headers
     *
     * @var array
     */
-    protected $requestHeader = [***REMOVED***
+    protected $requestHeader = [];
 
     /**
     * Raw response returned by server
@@ -61,7 +61,7 @@ class Guzzle implements HttpClientInterface
     *
     * @var array
     */
-    protected $responseHeader = [***REMOVED***
+    protected $responseHeader = [];
 
     /**
     * Response HTTP status code
@@ -82,7 +82,7 @@ class Guzzle implements HttpClientInterface
     *
     * @var mixed
     */
-    protected $responseClientInfo = [***REMOVED***
+    protected $responseClientInfo = [];
 
     /**
     * Hybridauth logger instance
@@ -103,7 +103,7 @@ class Guzzle implements HttpClientInterface
      * @param null  $client
      * @param array $config
      */
-    public function __construct($client = null, ***REMOVED***])
+    public function __construct($client = null, $config = [])
     {
         $this->client = $client ? $client : new Client($config);
     }
@@ -120,7 +120,7 @@ class Guzzle implements HttpClientInterface
             'method' => $method,
             'parameters' => $parameters,
             'headers' => $this->requestHeader,
-    ***REMOVED***;
+        ];
 
         $response = null;
 
@@ -131,7 +131,7 @@ class Guzzle implements HttpClientInterface
                     $response = $this->client->request($method, $uri, [
                       'query' => $parameters,
                       'headers' => $this->requestHeader,
-                ***REMOVED***);
+                    ]);
                     break;
                 case 'PUT':
                 case 'POST':
@@ -145,7 +145,7 @@ class Guzzle implements HttpClientInterface
 
                     $body_content = $parameters;
                     if ($multipart) {
-                        $body_content = [***REMOVED***
+                        $body_content = [];
                         foreach ($parameters as $key => $val) {
                             if ($val instanceof \CURLFile) {
                                 $val = fopen($val->getFilename(), 'r');
@@ -154,14 +154,14 @@ class Guzzle implements HttpClientInterface
                             $body_content[] = [
                                 'name' => $key,
                                 'contents' => $val,
-                        ***REMOVED***;
+                            ];
                         }
                     }
 
                     $response = $this->client->request($method, $uri, [
                         $body_type => $body_content,
                         'headers' => $this->requestHeader,
-                ***REMOVED***);
+                    ]);
                     break;
             }
         } catch (\Exception $e) {
@@ -200,13 +200,13 @@ class Guzzle implements HttpClientInterface
                 'code'    => $this->getResponseHttpCode(),
                 'headers' => $this->getResponseHeader(),
                 'body'    => $this->getResponseBody(),
-        ***REMOVED***,
+            ],
             'client' => [
                 'error' => $this->getResponseClientError(),
                 'info'  => $this->getResponseClientInfo(),
                 'opts'  => null,
-        ***REMOVED***,
-    ***REMOVED***;
+            ],
+        ];
     }
 
     /**

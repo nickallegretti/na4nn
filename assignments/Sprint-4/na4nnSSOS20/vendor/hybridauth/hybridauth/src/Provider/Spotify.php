@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -80,9 +80,9 @@ class Spotify extends OAuth2
     {
         $result = (new Data\Parser())->parseBirthday($birthday, '-');
 
-        $userProfile->birthDay = (int)$result[0***REMOVED***
-        $userProfile->birthMonth = (int)$result[1***REMOVED***
-        $userProfile->birthYear = (int)$result[2***REMOVED***
+        $userProfile->birthDay = (int)$result[0];
+        $userProfile->birthMonth = (int)$result[1];
+        $userProfile->birthYear = (int)$result[2];
 
         return $userProfile;
     }

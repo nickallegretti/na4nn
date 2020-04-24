@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -18,11 +18,11 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
- *   ***REMOVED*** 'id' => '', 'secret' => '' ],
+ *       'keys'     => [ 'id' => '', 'secret' => '' ],
  *       'scope'    => 'email, user_status, user_posts'
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Facebook( $config );
  *
@@ -101,7 +101,7 @@ class Facebook extends OAuth2
             'email',
             'hometown',
             'birthday',
-    ***REMOVED***;
+        ];
         $response = $this->apiRequest('me?fields=' . implode(',', $fields));
 
         $data = new Data\Collection($response);
@@ -177,9 +177,9 @@ class Facebook extends OAuth2
     {
         $result = (new Data\Parser())->parseBirthday($birthday, '/');
 
-        $userProfile->birthYear = (int)$result[0***REMOVED***
-        $userProfile->birthMonth = (int)$result[1***REMOVED***
-        $userProfile->birthDay = (int)$result[2***REMOVED***
+        $userProfile->birthYear = (int)$result[0];
+        $userProfile->birthMonth = (int)$result[1];
+        $userProfile->birthDay = (int)$result[2];
 
         return $userProfile;
     }
@@ -193,7 +193,7 @@ class Facebook extends OAuth2
      */
     public function getUserContacts()
     {
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         $apiUrl = 'me/friends?fields=link,name';
 
@@ -275,12 +275,12 @@ class Facebook extends OAuth2
         // Use page access token instead of user access token.
         $headers = [
             'Authorization' => 'Bearer ' . $page->access_token,
-    ***REMOVED***;
+        ];
 
         // Refresh proof for API call.
         $parameters = $status + [
             'appsecret_proof' => hash_hmac('sha256', $page->access_token, $this->clientSecret),
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest("{$pageId}/feed", 'POST', $parameters, $headers);
 
@@ -319,7 +319,7 @@ class Facebook extends OAuth2
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
         }
 
-        $activities = [***REMOVED***
+        $activities = [];
 
         foreach ($data->filter('data')->toArray() as $item) {
             $activities[] = $this->fetchUserActivity($item);

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -54,7 +54,7 @@ class Foursquare extends OAuth2
         $this->apiRequestParameters = [
             'oauth_token' => $this->getStoredData('access_token'),
             'v' => $apiVersion,
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -107,7 +107,7 @@ class Foursquare extends OAuth2
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
         }
 
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         foreach ($data->filter('response')->filter('friends')->filter('items')->toArray() as $item) {
             $contacts[] = $this->fetchUserContact($item);

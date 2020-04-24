@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
  * Hybridauth
  * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -73,7 +73,7 @@ class MicrosoftGraph extends OAuth2
     public function getUserContacts()
     {
         $apiUrl   = 'me/contacts?$top=50';
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         do {
             $response = $this->apiRequest($apiUrl);

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /**
  * A simple example that shows how to use multiple providers, opening provider authentication in a pop-up.
  */
@@ -26,7 +26,7 @@ try {
             // Store the provider for the callback event
             $storage->set('provider', $_GET['provider']);
         } else {
-            $error = $_GET['provider'***REMOVED***
+            $error = $_GET['provider'];
         }
     }
 
@@ -39,7 +39,7 @@ try {
             $adapter = $hybridauth->getAdapter($_GET['logout']);
             $adapter->disconnect();
         } else {
-            $error = $_GET['logout'***REMOVED***
+            $error = $_GET['logout'];
         }
     }
 
@@ -79,7 +79,7 @@ try {
             'first_name'    => $userProfile->firstName,
             'last_name'     => $userProfile->lastName,
             'photoURL'      => strtok($userProfile->photoURL,'?'),
-        ***REMOVED***;
+            ];
         // ...
 
         // Close pop-up window

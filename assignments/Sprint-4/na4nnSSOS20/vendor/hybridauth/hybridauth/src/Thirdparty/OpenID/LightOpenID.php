@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * This file is part of the LightOpenID PHP Library (https://github.com/iignatov/LightOpenID)
 *
@@ -172,7 +172,7 @@ class LightOpenID
         case 'realm':
             return $this->trustRoot;
         case 'mode':
-            return empty($this->data['openid_mode']) ? null : $this->data['openid_mode'***REMOVED***
+            return empty($this->data['openid_mode']) ? null : $this->data['openid_mode'];
         }
     }
 
@@ -396,13 +396,13 @@ class LightOpenID
                 # If any known provider uses them, file a bug report.
                 if ($name == 'location' && $update_claimed_id) {
                     if (strpos($headers[$name], 'http') === 0) {
-                        $this->identity = $this->claimed_id = $headers[$name***REMOVED***
+                        $this->identity = $this->claimed_id = $headers[$name];
                     } elseif ($headers[$name][0] == '/') {
                         $parsed_url = parse_url($this->claimed_id);
                         $this->identity =
                         $this->claimed_id = $parsed_url['scheme'] . '://'
                                           . $parsed_url['host']
-                                          . $headers[$name***REMOVED***
+                                          . $headers[$name];
                     }
                 }
             }
@@ -600,10 +600,10 @@ class LightOpenID
         $result = '';
 
         if (!empty($this->proxy)) {
-            $result = $this->proxy['host'***REMOVED***
+            $result = $this->proxy['host'];
 
             if (!empty($this->proxy['port'])) {
-                $result = $result . ':' . $this->proxy['port'***REMOVED***
+                $result = $result . ':' . $this->proxy['port'];
             }
 
             if (!empty($this->proxy['user'])) {
@@ -625,7 +625,7 @@ class LightOpenID
     protected function build_url($url, $parts)
     {
         if (isset($url['query'], $parts['query'])) {
-            $parts['query'] = $url['query'] . '&' . $parts['query'***REMOVED***
+            $parts['query'] = $url['query'] . '&' . $parts['query'];
         }
 
         $url = $parts + $url;
@@ -659,7 +659,7 @@ class LightOpenID
         preg_match_all("#<{$tag}[^>]*$valueName=['\"](.+?)['\"][^>]*$attrName=['\"].*?$attrValue.*?['\"][^>]*/?>#i", $content, $matches2);
 
         $result = array_merge($matches1[1], $matches2[1]);
-        return empty($result)?false:$result[0***REMOVED***
+        return empty($result)?false:$result[0];
     }
 
     /**
@@ -728,7 +728,7 @@ class LightOpenID
                             $this->sreg = strpos($content, '<Type>http://openid.net/sreg/1.0</Type>')
                                        || strpos($content, '<Type>http://openid.net/extensions/sreg/1.1</Type>');
 
-                            $server = $server[1***REMOVED***
+                            $server = $server[1];
                             if (isset($delegate[2])) {
                                 $this->identity = trim($delegate[2]);
                             }
@@ -750,9 +750,9 @@ class LightOpenID
                             $this->sreg = strpos($content, '<Type>http://openid.net/sreg/1.0</Type>')
                                        || strpos($content, '<Type>http://openid.net/extensions/sreg/1.1</Type>');
 
-                            $server = $server[1***REMOVED***
+                            $server = $server[1];
                             if (isset($delegate[1])) {
-                                $this->identity = $delegate[1***REMOVED***
+                                $this->identity = $delegate[1];
                             }
                             $this->version = 1;
 
@@ -884,7 +884,7 @@ class LightOpenID
                 if (!isset(self::$ax_to_sreg[$required])) {
                     continue;
                 }
-                $params['openid.sreg.required'][] = self::$ax_to_sreg[$required***REMOVED***
+                $params['openid.sreg.required'][] = self::$ax_to_sreg[$required];
             }
             $params['openid.sreg.required'] = implode(',', $params['openid.sreg.required']);
         }
@@ -895,7 +895,7 @@ class LightOpenID
                 if (!isset(self::$ax_to_sreg[$optional])) {
                     continue;
                 }
-                $params['openid.sreg.optional'][] = self::$ax_to_sreg[$optional***REMOVED***
+                $params['openid.sreg.optional'][] = self::$ax_to_sreg[$optional];
             }
             $params['openid.sreg.optional'] = implode(',', $params['openid.sreg.optional']);
         }
@@ -1053,14 +1053,14 @@ class LightOpenID
         # mode 'setup_needed' (for 2.0). Also catching all modes other than
         # id_res, in order to avoid throwing errors.
         if (isset($this->data['openid_user_setup_url'])) {
-            $this->setup_url = $this->data['openid_user_setup_url'***REMOVED***
+            $this->setup_url = $this->data['openid_user_setup_url'];
             return false;
         }
         if ($this->mode != 'id_res') {
             return false;
         }
 
-        $this->claimed_id = isset($this->data['openid_claimed_id'])?$this->data['openid_claimed_id']:$this->data['openid_identity'***REMOVED***
+        $this->claimed_id = isset($this->data['openid_claimed_id'])?$this->data['openid_claimed_id']:$this->data['openid_identity'];
         $params = array(
             'openid.assoc_handle' => $this->data['openid_assoc_handle'],
             'openid.signed'       => $this->data['openid_signed'],
@@ -1096,7 +1096,7 @@ class LightOpenID
             # In such case, validation would fail, since we'd send different data than OP
             # wants to verify. stripslashes() should solve that problem, but we can't
             # use it when magic_quotes is off.
-            $value = $this->data['openid_' . str_replace('.', '_', $item)***REMOVED***
+            $value = $this->data['openid_' . str_replace('.', '_', $item)];
             $params['openid.' . $item] = function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc() ? stripslashes($value) : $value;
         }
 
@@ -1174,7 +1174,7 @@ class LightOpenID
                     # The field name isn't part of the SREG spec, so we ignore it.
                     continue;
                 }
-                $attributes[$sreg_to_ax[$key]] = $this->data['openid_' . $alias . '_' . $key***REMOVED***
+                $attributes[$sreg_to_ax[$key]] = $this->data['openid_' . $alias . '_' . $key];
             }
         }
         return $attributes;

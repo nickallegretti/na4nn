@@ -172,21 +172,21 @@ users = {
         'courses': [
             'databases',
             'software_engineering'
-    ***REMOVED***,
+        ],
         'password': 'augurrox',
         'role': 'professor'
     },
     'saab': {
         'courses': [
             'comp_sci'
-    ***REMOVED***,
+        ],
         'password': 'boomr345',
         'role': 'professor'
     },
     'calyam': {
         'courses': [
             'cloud_computing',
-    ***REMOVED***,
+        ],
         'password': '#yeet',
         'role': 'professor'
     },
@@ -194,7 +194,7 @@ users = {
         'courses': [
             'cloud_computing',
             'software_engineering'
-    ***REMOVED***,
+        ],
         'password': 'bestTA',
         'role': 'ta'
     }

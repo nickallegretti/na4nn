@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace HybridauthTest\Hybridauth\User;
 

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -14,7 +14,7 @@ use Hybridauth\Adapter;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *
  *       //  authenticate with Yahoo openid
@@ -27,7 +27,7 @@ use Hybridauth\Adapter;
  *       // 'openid_identifier' => 'http://steamcommunity.com/openid',
  *
  *       // etc.
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\OpenID( $config );
  *

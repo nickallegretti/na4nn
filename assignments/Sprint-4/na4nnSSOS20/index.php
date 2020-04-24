@@ -21,7 +21,7 @@
            <a href= "logout.php" id="returnToProjects">Logout</a>  
         </div>
         <div id= "ssOWrapper" class = "clearHack">
-            ***REMOVED***
+            <?php
             require_once 'config.php';
  
             try {

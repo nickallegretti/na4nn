@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -86,7 +86,7 @@ class WindowsLive extends OAuth2
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
         }
 
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         foreach ($data->filter('data')->toArray() as $idx => $entry) {
             $userContact = new User\Contact();

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -87,7 +87,7 @@ class Slack extends OAuth2
         $maxSize = 0;
         foreach ($data->filter('user')->properties() as $property) {
             if (preg_match('/^image_(\d+)$/', $property, $matches) === 1) {
-                $availableSize = (int)$matches[1***REMOVED***
+                $availableSize = (int)$matches[1];
                 if ($maxSize < $availableSize) {
                     $maxSize = $availableSize;
                 }

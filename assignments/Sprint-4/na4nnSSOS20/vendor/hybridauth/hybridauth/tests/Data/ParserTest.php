@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace HybridauthTest\Hybridauth\Data;
 
@@ -23,7 +23,7 @@ class ParserTest extends \PHPUnit\Framework\TestCase
 
         $object = new \StdClass();
         $object->id = 69;
-        $object->slugs = ['Γεια σας', 'Bonjour', '안녕하세요'***REMOVED***
+        $object->slugs = ['Γεια σας', 'Bonjour', '안녕하세요'];
 
         $json = json_encode($object);
 

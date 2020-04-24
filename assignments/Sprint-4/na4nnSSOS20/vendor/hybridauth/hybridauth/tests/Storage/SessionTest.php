@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace HybridauthTest\Hybridauth\Storage;
 
@@ -25,7 +25,7 @@ class SessionTest extends \PHPUnit\Framework\TestCase
             [ 'provider.token.request_token', '9DYPEJ&qhvhP3eJ!' ],
             [ 'provider.token.oauth_token', '80359084-clg1DEtxQF3wstTcyUdHF3wsdHM' ],
             [ 'provider.token.oauth_token_secret', 'qiHTi1znz6qiH3tTcyUdHnz6qiH3tTcyUdH3xW3wsDvV08e' ],
-    ***REMOVED***;
+        ];
     }
 
     public function test_instance_of()

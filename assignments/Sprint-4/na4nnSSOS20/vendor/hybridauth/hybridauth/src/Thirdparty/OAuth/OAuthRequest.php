@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * This file is part of the OAuth PHP Library (https://code.google.com/p/oauth/)
 *
@@ -50,8 +50,8 @@ class OAuthRequest
     public static function from_request($http_method = null, $http_url = null, $parameters = null)
     {
         $scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") ? 'http' : 'https';
-        $http_url = ($http_url) ? $http_url : $scheme . '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'***REMOVED***
-        $http_method = ($http_method) ? $http_method : $_SERVER['REQUEST_METHOD'***REMOVED***
+        $http_url = ($http_url) ? $http_url : $scheme . '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'];
+        $http_method = ($http_method) ? $http_method : $_SERVER['REQUEST_METHOD'];
         
         // We weren't handed any parameters, so let's find the ones relevant to
         // this request.

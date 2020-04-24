@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
-***REMOVED***,
+    ],
     "content-hash": "e812a819f7b7d076077f8abcb3273270",
     "packages": [
         {
@@ -36,13 +36,13 @@
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
-        ***REMOVED***,
+            ],
             "authors": [
                 {
                     "name": "Miled",
                     "email": "hybridauth@gmail.com"
                 }
-        ***REMOVED***,
+            ],
             "description": "PHP Social Authentication Library",
             "homepage": "https://hybridauth.github.io",
             "keywords": [
@@ -55,10 +55,10 @@
                 "oauth",
                 "social",
                 "twitter"
-        ***REMOVED***,
+            ],
             "time": "2020-04-16T08:04:26+00:00"
         }
-***REMOVED***,
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",

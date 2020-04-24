@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -69,7 +69,7 @@ class WeChat extends OAuth2
         $this->apiRequestParameters = [
             'appid' => $this->clientId,
             'secret' => $this->clientSecret
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -105,7 +105,7 @@ class WeChat extends OAuth2
         $userProfile->city        = $data->get('city');
         $userProfile->region      = $data->get('province');
         $userProfile->country     = $data->get('country');
-        $userProfile->gender      = ['', 'male', 'female'][(int)$data->get('sex')***REMOVED***
+        $userProfile->gender      = ['', 'male', 'female'][(int)$data->get('sex')];
 
         return $userProfile;
     }

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -135,7 +135,7 @@ abstract class OpenID extends AbstractAdapter implements AdapterInterface
             'contact/country/home'   ,
 
             'media/image/default'    ,
-    ***REMOVED***;
+        ];
 
         $authUrl = $this->openIdClient->authUrl();
 

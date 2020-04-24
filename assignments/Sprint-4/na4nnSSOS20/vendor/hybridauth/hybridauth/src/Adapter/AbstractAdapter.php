@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -38,7 +38,7 @@ abstract class AbstractAdapter implements AdapterInterface
      *
      * @var mixed
      */
-    protected ***REMOVED******REMOVED***
+    protected $config = [];
 
     /**
      * Extra Provider parameters.
@@ -91,7 +91,7 @@ abstract class AbstractAdapter implements AdapterInterface
      * @param LoggerInterface     $logger
      */
     public function __construct(
-        ***REMOVED***],
+        $config = [],
         HttpClientInterface $httpClient = null,
         StorageInterface    $storage = null,
         LoggerInterface     $logger = null
@@ -209,9 +209,9 @@ abstract class AbstractAdapter implements AdapterInterface
             'refresh_token',
             'expires_in',
             'expires_at',
-    ***REMOVED***;
+        ];
 
-        $tokens = [***REMOVED***
+        $tokens = [];
 
         foreach ($tokenNames as $name) {
             if ($this->getStoredData($name)) {

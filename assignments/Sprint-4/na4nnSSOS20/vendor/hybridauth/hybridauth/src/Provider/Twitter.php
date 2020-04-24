@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,11 +17,11 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => [ 'key' => '', 'secret' => '' ], // OAuth1 uses 'key' not 'id'
  *       'authorize' => true
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Twitter( $config );
  *
@@ -113,7 +113,7 @@ class Twitter extends OAuth1
         $userProfile->data = [
           'followed_by' => $data->get('followers_count'),
           'follows' => $data->get('friends_count'),
-    ***REMOVED***;
+        ];
 
         return $userProfile;
     }
@@ -134,16 +134,16 @@ class Twitter extends OAuth1
         }
 
         if ($data->filter('ids')->isEmpty()) {
-            return [***REMOVED***
+            return [];
         }
 
-        $contacts = [***REMOVED***
+        $contacts = [];
 
         // 75 id per time should be okey
         $contactsIds = array_chunk((array) $data->get('ids'), 75);
 
         foreach ($contactsIds as $chunk) {
-            $parameters = [ 'user_id' => implode(',', $chunk) ***REMOVED***
+            $parameters = [ 'user_id' => implode(',', $chunk) ];
 
             try {
                 $response = $this->apiRequest('users/lookup.json', 'GET', $parameters);
@@ -190,18 +190,18 @@ class Twitter extends OAuth1
     public function setUserStatus($status)
     {
         if (is_string($status)) {
-            $status = ['status' => $status***REMOVED***
+            $status = ['status' => $status];
         }
 
         // Prepare request parameters.
-        $params = [***REMOVED***
+        $params = [];
         if (isset($status['status'])) {
-            $params['status'] = $status['status'***REMOVED***
+            $params['status'] = $status['status'];
         }
         if (isset($status['picture'])) {
             $media = $this->apiRequest('https://upload.twitter.com/1.1/media/upload.json', 'POST', [
                 'media' => base64_encode(file_get_contents($status['picture'])),
-        ***REMOVED***);
+            ]);
             $params['media_ids'] = $media->media_id;
         }
 
@@ -222,10 +222,10 @@ class Twitter extends OAuth1
         $response = $this->apiRequest($apiUrl);
 
         if (!$response) {
-            return [***REMOVED***
+            return [];
         }
 
-        $activities = [***REMOVED***
+        $activities = [];
 
         foreach ($response as $item) {
             $activities[] = $this->fetchUserActivity($item);

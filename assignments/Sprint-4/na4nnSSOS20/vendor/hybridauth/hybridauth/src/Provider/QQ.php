@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace Hybridauth\Provider;
 
@@ -66,13 +66,13 @@ class QQ extends OAuth2
             'client_id'     => $this->clientId,
             'client_secret' => $this->clientSecret,
             'refresh_token' => $this->getStoredData('refresh_token'),
-    ***REMOVED***;
+        ];
 
         $this->apiRequestParameters = [
             'access_token' => $this->getStoredData('access_token')
-    ***REMOVED***;
+        ];
 
-        $this->apiRequestHeaders = [***REMOVED***
+        $this->apiRequestHeaders = [];
     }
 
     /**
@@ -110,7 +110,7 @@ class QQ extends OAuth2
             'oauth_consumer_key' => $this->clientId,
             'openid' => $openid,
             'format' => 'json'
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest($this->accessUserInfo, 'GET', $userRequestParameters);
 

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -133,7 +133,7 @@ final class Collection
     */
     public function properties()
     {
-        $properties = [***REMOVED***
+        $properties = [];
 
         foreach ($this->collection as $key => $value) {
             $properties[] = $key;
@@ -149,7 +149,7 @@ final class Collection
     */
     public function values()
     {
-        $values = [***REMOVED***
+        $values = [];
 
         foreach ($this->collection as $value) {
             $values[] = $value;

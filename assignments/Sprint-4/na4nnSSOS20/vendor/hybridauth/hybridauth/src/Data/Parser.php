@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -69,7 +69,7 @@ final class Parser
         libxml_use_internal_errors(false);
         
         if (! $xml) {
-            return [***REMOVED***
+            return [];
         }
 
         $arr = json_decode(json_encode((array) $xml), true);
@@ -114,6 +114,6 @@ final class Parser
     {
         $birthday = date_parse($birthday);
 
-        return [ $birthday['year'], $birthday['month'], $birthday['day'] ***REMOVED***
+        return [ $birthday['year'], $birthday['month'], $birthday['day'] ];
     }
 }

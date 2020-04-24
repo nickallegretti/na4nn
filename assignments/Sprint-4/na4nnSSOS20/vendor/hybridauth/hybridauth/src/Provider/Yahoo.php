@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -56,7 +56,7 @@ class Yahoo extends OAuth2
 
         $this->tokenExchangeHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
     }
 
     /**

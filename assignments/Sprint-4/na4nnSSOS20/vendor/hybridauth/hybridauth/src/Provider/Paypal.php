@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,11 +17,11 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
- *   ***REMOVED*** 'id' => '', 'secret' => '' ],
+ *       'keys'     => [ 'id' => '', 'secret' => '' ],
  *       'scope'    => 'openid profile email',
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Paypal( $config );
  *
@@ -72,15 +72,15 @@ class Paypal extends OAuth2
 
         $this->AuthorizeUrlParameters += [
             'flowEntry' => 'static'
-    ***REMOVED***;
+        ];
 
         $this->tokenExchangeHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
 
         $this->tokenRefreshHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -93,11 +93,11 @@ class Paypal extends OAuth2
     {
         $headers = [
             'Content-Type' => 'application/json',
-    ***REMOVED***;
+        ];
 
         $parameters = [
             'schema' => 'paypalv1.1'
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest('v1/identity/oauth2/userinfo', 'GET', $parameters, $headers);
         $data = new Data\Collection($response);

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
  * Hybridauth
  * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -52,7 +52,7 @@ class LinkedIn extends OAuth2
             'firstName',
             'lastName',
             'profilePicture(displayImage~:playableStreams)',
-    ***REMOVED***;
+        ];
 
 
         $response = $this->apiRequest('me?projection=(' . implode(',', $fields) . ')');
@@ -152,14 +152,14 @@ class LinkedIn extends OAuth2
                     'com.linkedin.ugc.ShareContent' => [
                         'shareCommentary' => [
                             'text' => $status,
-        ***REMOVED***
+                        ],
                         'shareMediaCategory' => 'NONE',
-    ***REMOVED***
-***REMOVED***
+                    ],
+                ],
                 'visibility' => [
                     'com.linkedin.ugc.MemberNetworkVisibility' => 'PUBLIC',
-***REMOVED***
-        ***REMOVED***;
+                ],
+            ];
         }
 
 
@@ -167,7 +167,7 @@ class LinkedIn extends OAuth2
             'Content-Type' => 'application/json',
             'x-li-format'  => 'json',
             'X-Restli-Protocol-Version'  => '2.0.0',
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest("ugcPosts", 'POST', $status, $headers);
 

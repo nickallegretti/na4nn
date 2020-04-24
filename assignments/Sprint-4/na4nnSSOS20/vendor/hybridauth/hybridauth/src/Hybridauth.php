@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -77,7 +77,7 @@ class Hybridauth
             'debug_file'   => '',
             'curl_options' => null,
             'providers'    => []
-    ***REMOVED***;
+        ];
         $this->storage = $storage;
         $this->logger = $logger;
         $this->httpClient = $httpClient;
@@ -165,14 +165,14 @@ class Hybridauth
             throw new UnexpectedValueException('Disabled Provider.');
         }
 
-        $config = $providersConfig[$name***REMOVED***
+        $config = $providersConfig[$name];
         $config += [
             'debug_mode' => $this->config['debug_mode'],
             'debug_file' => $this->config['debug_file'],
-    ***REMOVED***;
+        ];
 
         if (! isset($config['callback']) && isset($this->config['callback'])) {
-            $config['callback'] = $this->config['callback'***REMOVED***
+            $config['callback'] = $this->config['callback'];
         }
 
         return $config;
@@ -199,7 +199,7 @@ class Hybridauth
     */
     public function getProviders()
     {
-        $providers = [***REMOVED***
+        $providers = [];
 
         foreach ($this->config['providers'] as $name => $config) {
             if ($config['enabled']) {
@@ -219,7 +219,7 @@ class Hybridauth
     */
     public function getConnectedProviders()
     {
-        $providers = [***REMOVED***
+        $providers = [];
 
         foreach ($this->getProviders() as $name) {
             if ($this->isConnectedWith($name)) {
@@ -239,7 +239,7 @@ class Hybridauth
     */
     public function getConnectedAdapters()
     {
-        $adapters = [***REMOVED***
+        $adapters = [];
 
         foreach ($this->getProviders() as $name) {
             $adapter = $this->getAdapter($name);

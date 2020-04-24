@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /**
  * Build a simple HTML page with multiple providers, opening provider authentication in a pop-up.
  */
@@ -32,30 +32,30 @@ $adapters = $hybridauth->getConnectedAdapters();
 
     <ul>
 
-***REMOVED*** foreach ($hybridauth->getProviders() as $name) : ?>
-    ***REMOVED*** if (!isset($adapters[$name])) : ?>
+<?php foreach ($hybridauth->getProviders() as $name) : ?>
+    <?php if (!isset($adapters[$name])) : ?>
         <li>
-            <a href="#" onclick="javascript:auth_popup('***REMOVED*** print $name ?>');">
-                Sign in with ***REMOVED*** print $name ?>
+            <a href="#" onclick="javascript:auth_popup('<?php print $name ?>');">
+                Sign in with <?php print $name ?>
             </a>
         </li>
-    ***REMOVED*** endif; ?>
-***REMOVED*** endforeach; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
 
     </ul>
 
-***REMOVED*** if ($adapters) : ?>
+<?php if ($adapters) : ?>
     <h1>You are logged in:</h1>
     <ul>
-        ***REMOVED*** foreach ($adapters as $name => $adapter) : ?>
+        <?php foreach ($adapters as $name => $adapter) : ?>
             <li>
-                <strong>***REMOVED*** print $adapter->getUserProfile()->displayName; ?></strong> from
-                <i>***REMOVED*** print $name; ?></i>
-                <span>(<a href="***REMOVED*** print $config['callback'] . "?logout={$name}"; ?>">Log Out</a>)</span>
+                <strong><?php print $adapter->getUserProfile()->displayName; ?></strong> from
+                <i><?php print $name; ?></i>
+                <span>(<a href="<?php print $config['callback'] . "?logout={$name}"; ?>">Log Out</a>)</span>
             </li>
-        ***REMOVED*** endforeach; ?>
+        <?php endforeach; ?>
     </ul>
-***REMOVED*** endif; ?>
+<?php endif; ?>
 
 </body>
 </html>

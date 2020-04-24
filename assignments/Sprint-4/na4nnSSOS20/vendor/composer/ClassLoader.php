@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 /*
  * This file is part of Composer.
@@ -124,7 +124,7 @@ class ClassLoader
             return;
         }
 
-        $first = $prefix[0***REMOVED***
+        $first = $prefix[0];
         if (!isset($this->prefixesPsr0[$first][$prefix])) {
             $this->prefixesPsr0[$first][$prefix] = (array) $paths;
 
@@ -336,7 +336,7 @@ class ClassLoader
     {
         // class map lookup
         if (isset($this->classMap[$class])) {
-            return $this->classMap[$class***REMOVED***
+            return $this->classMap[$class];
         }
         if ($this->classMapAuthoritative || isset($this->missingClasses[$class])) {
             return false;
@@ -372,7 +372,7 @@ class ClassLoader
         // PSR-4 lookup
         $logicalPathPsr4 = strtr($class, '\\', DIRECTORY_SEPARATOR) . $ext;
 
-        $first = $class[0***REMOVED***
+        $first = $class[0];
         if (isset($this->prefixLengthsPsr4[$first])) {
             $subPath = $class;
             while (false !== $lastPos = strrpos($subPath, '\\')) {

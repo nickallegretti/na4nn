@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,12 +17,12 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback' => Hybridauth\HttpClient\Util::getCurrentUrl(),
- *   ***REMOVED*** 'id' => '', 'secret' => '' ],
+ *       'keys'     => [ 'id' => '', 'secret' => '' ],
  *       'site'     => 'stackoverflow'
  *       'api_key'  => '...' // that thing to receive a higher request quota.
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\StackExchange( $config );
  *
@@ -66,7 +66,7 @@ class StackExchange extends OAuth2
 
         $apiKey = $this->config->get('api_key');
 
-        $this->apiRequestParameters = [ 'key' => $apiKey***REMOVED***
+        $this->apiRequestParameters = [ 'key' => $apiKey];
     }
 
     /**

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -173,7 +173,7 @@ final class Profile
     *
     * @var array
     */
-    public $data = [***REMOVED***
+    public $data = [];
 
     /**
     * Prevent the providers adapters from adding new fields.

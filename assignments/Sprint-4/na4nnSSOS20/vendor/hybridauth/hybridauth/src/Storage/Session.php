@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -57,7 +57,7 @@ class Session implements StorageInterface
         $key = $this->keyPrefix . strtolower($key);
 
         if (isset($_SESSION[$this->storeNamespace], $_SESSION[$this->storeNamespace][$key])) {
-            return $_SESSION[$this->storeNamespace][$key***REMOVED***
+            return $_SESSION[$this->storeNamespace][$key];
         }
 
         return null;
@@ -78,7 +78,7 @@ class Session implements StorageInterface
     */
     public function clear()
     {
-        $_SESSION[$this->storeNamespace] = [***REMOVED***
+        $_SESSION[$this->storeNamespace] = [];
     }
 
     /**
@@ -89,7 +89,7 @@ class Session implements StorageInterface
         $key = $this->keyPrefix . strtolower($key);
 
         if (isset($_SESSION[$this->storeNamespace], $_SESSION[$this->storeNamespace][$key])) {
-            $tmp = $_SESSION[$this->storeNamespace***REMOVED***
+            $tmp = $_SESSION[$this->storeNamespace];
 
             unset($tmp[$key]);
 
@@ -105,7 +105,7 @@ class Session implements StorageInterface
         $key = $this->keyPrefix . strtolower($key);
 
         if (isset($_SESSION[$this->storeNamespace]) && count($_SESSION[$this->storeNamespace])) {
-            $tmp = $_SESSION[$this->storeNamespace***REMOVED***
+            $tmp = $_SESSION[$this->storeNamespace];
 
             foreach ($tmp as $k => $v) {
                 if (strstr($k, $key)) {

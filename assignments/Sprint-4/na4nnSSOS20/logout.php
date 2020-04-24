@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 require_once 'config.php';
  
 try {

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * This file is part of the OAuth PHP Library (https://code.google.com/p/oauth/)
 *
@@ -97,10 +97,10 @@ class OAuthUtil
             // that $_SERVER actually contains what we need
             $out = array();
             if (isset($_SERVER['CONTENT_TYPE'])) {
-                $out['Content-Type'] = $_SERVER['CONTENT_TYPE'***REMOVED***
+                $out['Content-Type'] = $_SERVER['CONTENT_TYPE'];
             }
             if (isset($_ENV['CONTENT_TYPE'])) {
-                $out['Content-Type'] = $_ENV['CONTENT_TYPE'***REMOVED***
+                $out['Content-Type'] = $_ENV['CONTENT_TYPE'];
             }
             
             foreach ($_SERVER as $key => $value) {

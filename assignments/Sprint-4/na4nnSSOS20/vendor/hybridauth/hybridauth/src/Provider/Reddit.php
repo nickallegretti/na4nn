@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -51,17 +51,17 @@ class Reddit extends OAuth2
 
         $this->AuthorizeUrlParameters += [
             'duration' => 'permanent'
-    ***REMOVED***;
+        ];
 
         $this->tokenExchangeParameters = [
             'client_id'    => $this->clientId,
             'grant_type'   => 'authorization_code',
             'redirect_uri' => $this->callback
-    ***REMOVED***;
+        ];
 
         $this->tokenExchangeHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
 
         $this->tokenRefreshHeaders = $this->tokenExchangeHeaders;
     }

@@ -11,10 +11,10 @@ The main goal of Hybridauth is to act as an abstract API between your applicatio
 Hybridauth provides a number of basic [examples](https://github.com/hybridauth/hybridauth/tree/master/examples). You can also find complete Hybridauth documentation at https://hybridauth.github.io
 
 ```php
-***REMOVED***
+$config = [
     'callback' => 'https://example.com/path/to/script.php',
     'keys' => [ 'key' => 'your-twitter-consumer-key', 'secret' => 'your-twitter-consumer-secret' ]
-***REMOVED***
+];
 
 try {
     $twitter = new Hybridauth\Provider\Twitter($config);

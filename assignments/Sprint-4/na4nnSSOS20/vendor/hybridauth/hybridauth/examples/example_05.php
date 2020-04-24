@@ -1,15 +1,15 @@
-***REMOVED***
+<?php
 /*!
 * A simple example that shows how to use Guzzle as a Http Client for Hybridauth instead of PHP Curl extention.
 */
 
 include 'vendor/autoload.php';
 
-***REMOVED***
+$config = [
     'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
 
     'keys' => [ 'id' => '', 'secret' => '' ],
-***REMOVED***
+];
 
 $guzzle = new Hybridauth\HttpClient\Guzzle(null, [
     // 'verify'  => true, # Set to false to disable SSL certificate verification

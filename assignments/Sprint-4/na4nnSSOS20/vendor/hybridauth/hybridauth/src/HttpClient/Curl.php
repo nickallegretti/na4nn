@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -33,7 +33,7 @@ class Curl implements HttpClientInterface
         CURLOPT_ENCODING       => 'identity',
         // phpcs:ignore
         CURLOPT_USERAGENT      => 'HybridAuth, PHP Social Authentication Library (https://github.com/hybridauth/hybridauth)',
-***REMOVED***;
+    ];
 
     /**
     * Method request() arguments
@@ -42,7 +42,7 @@ class Curl implements HttpClientInterface
     *
     * @var array
     */
-    protected $requestArguments = [***REMOVED***
+    protected $requestArguments = [];
 
     /**
     * Default request headers
@@ -55,7 +55,7 @@ class Curl implements HttpClientInterface
         'Connection'      => 'keep-alive',
         'Expect'          => '',
         'Pragma'          => '',
-***REMOVED***;
+    ];
 
     /**
     * Raw response returned by server
@@ -69,7 +69,7 @@ class Curl implements HttpClientInterface
     *
     * @var array
     */
-    protected $responseHeader = [***REMOVED***
+    protected $responseHeader = [];
 
     /**
     * Response HTTP status code
@@ -90,7 +90,7 @@ class Curl implements HttpClientInterface
     *
     * @var mixed
     */
-    protected $responseClientInfo = [***REMOVED***
+    protected $responseClientInfo = [];
 
     /**
     * Hybridauth logger instance
@@ -111,7 +111,7 @@ class Curl implements HttpClientInterface
             'method' => $method,
             'parameters' => $parameters,
             'headers' => $this->requestHeader,
-    ***REMOVED***;
+        ];
 
         $curl = curl_init();
 
@@ -147,7 +147,7 @@ class Curl implements HttpClientInterface
 
         $this->curlOptions[CURLOPT_URL]            = $uri;
         $this->curlOptions[CURLOPT_HTTPHEADER]     = $this->prepareRequestHeaders();
-        $this->curlOptions[CURLOPT_HEADERFUNCTION] = [ $this, 'fetchResponseHeader' ***REMOVED***
+        $this->curlOptions[CURLOPT_HEADERFUNCTION] = [ $this, 'fetchResponseHeader' ];
 
         foreach ($this->curlOptions as $opt => $value) {
             curl_setopt($curl, $opt, $value);
@@ -190,13 +190,13 @@ class Curl implements HttpClientInterface
                 'code'    => $this->getResponseHttpCode(),
                 'headers' => $this->getResponseHeader(),
                 'body'    => $this->getResponseBody(),
-        ***REMOVED***,
+            ],
             'client' => [
                 'error' => $this->getResponseClientError(),
                 'info'  => $this->getResponseClientInfo(),
                 'opts'  => $curlOptions,
-        ***REMOVED***,
-    ***REMOVED***;
+            ],
+        ];
     }
 
     /**
@@ -303,7 +303,7 @@ class Curl implements HttpClientInterface
     */
     protected function prepareRequestHeaders()
     {
-        $headers = [***REMOVED***
+        $headers = [];
 
         foreach ($this->requestHeader as $header => $value) {
             $headers[] = trim($header) .': '. trim($value);

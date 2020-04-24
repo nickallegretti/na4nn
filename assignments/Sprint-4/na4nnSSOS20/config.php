@@ -1,17 +1,17 @@
-***REMOVED***
-***REMOVED***
+<?php
+require_once 'vendor/autoload.php';
  
-***REMOVED***
-***REMOVED***
-***REMOVED***
-                    'id' => '412446641903-hjsrm8bpm15c6128lvaunenij21oo7s4.apps.googleusercontent.com',
-                    'secret' => 'FEWBOe-7MuAqVfx6M9y0pFkf'
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+$config = [
+    'callback' => 'http://na4nnstudentprojects.com/na4nnSSOS20/index.php',
+    'keys'     => [
+                    'id' => '',
+                    'secret' => ''
+                ],
+    'scope'    => 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+    'authorize_url_parameters' => [
+            'approval_prompt' => 'force', // to pass only when you need to acquire a new refresh token.
+            'access_type' => 'offline'
+    ]
+];
  
-***REMOVED***
+$adapter = new Hybridauth\Provider\Google( $config );

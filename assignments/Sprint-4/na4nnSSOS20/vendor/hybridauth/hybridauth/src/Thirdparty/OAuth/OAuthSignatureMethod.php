@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * This file is part of the OAuth PHP Library (https://code.google.com/p/oauth/)
 *

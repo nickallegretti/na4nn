@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -48,7 +48,7 @@ class Patreon extends OAuth2
         $this->tokenRefreshParameters += [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -58,7 +58,7 @@ class Patreon extends OAuth2
     {
         $response = $this->apiRequest('oauth2/v2/identity', 'GET', [
             'fields[user]' => 'created,first_name,last_name,email,full_name,is_email_verified,thumb_url,url',
-    ***REMOVED***);
+        ]);
 
         $collection = new Collection($response);
         if (!$collection->exists('data')) {

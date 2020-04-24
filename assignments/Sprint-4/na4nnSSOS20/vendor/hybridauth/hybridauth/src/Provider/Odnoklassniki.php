@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,10 +17,10 @@ use Hybridauth\User;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => ['id' => '', 'key' => '', 'secret' => ''],
- *   ***REMOVED***
+ *   ];
 
  *   $adapter = new Hybridauth\Provider\Odnoklassniki($config);
  *
@@ -62,7 +62,7 @@ class Odnoklassniki extends OAuth2
         $this->tokenRefreshParameters += [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret
-    ***REMOVED***;
+        ];
     }
 
     /**
@@ -89,7 +89,7 @@ class Odnoklassniki extends OAuth2
             'method'          => 'users.getCurrentUser',
             'fields'          => implode(',', $fields),
             'sig'             => $sig,
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest('fb.do', 'GET', $parameters);
 
@@ -113,9 +113,9 @@ class Odnoklassniki extends OAuth2
         // Handle birthday.
         if ($data->get('birthday')) {
             $bday                    = explode('-', $data->get('birthday'));
-            $userProfile->birthDay   = (int)$bday[0***REMOVED***
-            $userProfile->birthMonth = (int)$bday[1***REMOVED***
-            $userProfile->birthYear  = (int)$bday[2***REMOVED***
+            $userProfile->birthDay   = (int)$bday[0];
+            $userProfile->birthMonth = (int)$bday[1];
+            $userProfile->birthYear  = (int)$bday[2];
         }
 
         return $userProfile;

@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 
 namespace HybridauthTest\Hybridauth\Data;
 
@@ -18,14 +18,14 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
 
     public function some_random_array()
     {
-        return ['id' => 69, 'slugs' => ['Γεια σας', 'Bonjour', '안녕하세요', 'year' => 2020]***REMOVED***
+        return ['id' => 69, 'slugs' => ['Γεια σας', 'Bonjour', '안녕하세요', 'year' => 2020]];
     }
 
     public function some_random_object()
     {
         $object = new \StdClass();
         $object->id = 69;
-        $object->slugs = ['Γεια σας', 'Bonjour', '안녕하세요', 'year' => 2020***REMOVED***
+        $object->slugs = ['Γεια σας', 'Bonjour', '안녕하세요', 'year' => 2020];
 
         return $object;
     }

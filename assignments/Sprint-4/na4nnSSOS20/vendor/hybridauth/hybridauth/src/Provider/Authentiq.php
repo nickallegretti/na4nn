@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -51,15 +51,15 @@ class Authentiq extends OAuth2
 
         $this->AuthorizeUrlParameters += [
             'prompt' => 'consent'
-    ***REMOVED***;
+        ];
 
         $this->tokenExchangeHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
 
         $this->tokenRefreshHeaders = [
             'Authorization' => 'Basic ' . base64_encode($this->clientId .  ':' . $this->clientSecret)
-    ***REMOVED***;
+        ];
     }
 
     /**

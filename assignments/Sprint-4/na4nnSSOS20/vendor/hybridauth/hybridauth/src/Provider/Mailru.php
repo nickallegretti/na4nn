@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -17,10 +17,10 @@ use Hybridauth\User\Profile;
  *
  * Example:
  *
- *   ***REMOVED***
+ *   $config = [
  *       'callback'  => Hybridauth\HttpClient\Util::getCurrentUrl(),
  *       'keys'      => ['id' => '', 'secret' => ''],
- *   ***REMOVED***
+ *   ];
  *
  *   $adapter = new Hybridauth\Provider\Mailru($config);
  *
@@ -63,7 +63,7 @@ class Mailru extends OAuth2
             'method' => 'users.getInfo',
             'secure' => 1,
             'session_key' => $this->getStoredData('access_token'),
-    ***REMOVED***;
+        ];
         $sign = md5(http_build_query($params, null, '') . $this->clientSecret);
 
         $param = [
@@ -72,7 +72,7 @@ class Mailru extends OAuth2
             'secure' => 1,
             'session_key' => $this->getStoredData('access_token'),
             'sig' => $sign,
-    ***REMOVED***;
+        ];
 
         $response = $this->apiRequest('', 'GET', $param);
 

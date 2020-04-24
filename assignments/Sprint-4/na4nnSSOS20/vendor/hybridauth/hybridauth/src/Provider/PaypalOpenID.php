@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -59,7 +59,7 @@ class PaypalOpenID extends OpenID
             'contact/postalcode/business',
             'company/name',
             'company/title',
-    ***REMOVED***;
+        ];
 
         HttpClient\Util::redirect($this->openIdClient->authUrl());
     }

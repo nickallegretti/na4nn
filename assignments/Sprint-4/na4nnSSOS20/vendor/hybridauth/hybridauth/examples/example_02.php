@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Details how to use users in a similar fashion to Hybridauth 2. Note that while Hybridauth 3 provides 
 * a similar interface to Hybridauth 2, both versions are not fully compatible with each other.
@@ -9,30 +9,30 @@ include 'vendor/autoload.php';
 use Hybridauth\Hybridauth;
 use Hybridauth\HttpClient;
 
-***REMOVED***
+$config = [
     'callback' => HttpClient\Util::getCurrentUrl(),
 
     'providers' => [
         'GitHub' => [ 
             'enabled' => true,
             'keys'    => [ 'id' => '', 'secret' => '' ], 
-    ***REMOVED***,
+        ],
 
         'Google' => [ 
             'enabled' => true,
             'keys'    => [ 'id' => '', 'secret' => '' ],
-    ***REMOVED***,
+        ],
 
         'Facebook' => [ 
             'enabled' => true,
             'keys'    => [ 'id' => '', 'secret' => '' ],
-    ***REMOVED***,
+        ],
 
         'Twitter' => [ 
             'enabled' => true,
             'keys'    => [ 'key' => '', 'secret' => '' ],
-    ***REMOVED***
-***REMOVED***,
+        ]
+    ],
 
     /* optional : set debug mode
         'debug_mode' => true,
@@ -51,8 +51,8 @@ use Hybridauth\HttpClient;
 
             // set a custom user agent
             CURLOPT_USERAGENT      => ''
-    ***REMOVED*** */
-***REMOVED***
+        ] */
+];
 
 try {    
     $hybridauth = new Hybridauth( $config );

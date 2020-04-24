@@ -1,4 +1,4 @@
-***REMOVED***
+<?php
 /*!
 * Hybridauth
 * https://hybridauth.github.io | https://github.com/hybridauth/hybridauth
@@ -128,7 +128,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var boolean
     */
-    protected $AuthorizeUrlParameters = [***REMOVED***
+    protected $AuthorizeUrlParameters = [];
 
     /**
     * Authorization Request State
@@ -165,7 +165,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $tokenExchangeParameters = [***REMOVED***
+    protected $tokenExchangeParameters = [];
 
     /**
     * Authorization Request HTTP headers.
@@ -176,7 +176,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $tokenExchangeHeaders = [***REMOVED***
+    protected $tokenExchangeHeaders = [];
 
     /**
     * Refresh Token Request HTTP method.
@@ -196,7 +196,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $tokenRefreshParameters = [***REMOVED***
+    protected $tokenRefreshParameters = [];
 
     /**
     * Refresh Token Request HTTP headers.
@@ -207,7 +207,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $tokenRefreshHeaders = [***REMOVED***
+    protected $tokenRefreshHeaders = [];
 
     /**
     * Authorization Request URL parameters.
@@ -218,7 +218,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $apiRequestParameters = [***REMOVED***
+    protected $apiRequestParameters = [];
 
     /**
     * Authorization Request HTTP headers.
@@ -229,7 +229,7 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
     *
     * @var array
     */
-    protected $apiRequestHeaders = [***REMOVED***
+    protected $apiRequestHeaders = [];
 
     /**
     * {@inheritdoc}
@@ -265,23 +265,23 @@ abstract class OAuth2 extends AbstractAdapter implements AdapterInterface
             'client_id'     => $this->clientId,
             'redirect_uri'  => $this->callback,
             'scope'         => $this->scope,
-    ***REMOVED***;
+        ];
 
         $this->tokenExchangeParameters = [
             'client_id'     => $this->clientId,
             'client_secret' => $this->clientSecret,
             'grant_type'    => 'authorization_code',
             'redirect_uri'  => $this->callback
-    ***REMOVED***;
+        ];
 
         $this->tokenRefreshParameters = [
             'grant_type'    => 'refresh_token',
             'refresh_token' => $this->getStoredData('refresh_token'),
-    ***REMOVED***;
+        ];
 
         $this->apiRequestHeaders = [
             'Authorization' => 'Bearer ' . $this->getStoredData('access_token')
-    ***REMOVED***;
+        ];
     }
 
     /**
