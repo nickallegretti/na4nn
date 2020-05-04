@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.defaultBodyBackground{
+                
+                margin: 0px;
+                padding: 0px;
+                
+                /*Seemless background image made in GIMP for this project. No source needed*/
+                background-image: url(Background.png);
+                background-attachment: fixed;
+                background-repeat:repeat;
+                background-size: 2048px;
+            }
+         
+            #navbar{
+                display: block;
+                list-style-type: none;
+                padding: 0;
+                overflow: hidden;
+                background-color: darkred;
+                position:fixed;
+                margin-top: 0;
+                width: 100%;
+              margin-bottom: 100px;
+                
+            }
+            .name, .tab {
+                display: inline;
+                text-align: left;
+                 margin: 10px;
+                font-family:fantasy;
+            }
+            
+            .name{
+                font-size: 32px;
+            }
+            
+            .tab{
+                font-size: 24px;
+            }
+            
+            
+            .font, .hyper{
+                    text-decoration: none;
+                    color: white;
+            }
+            
+            .hyper:hover{
+                color: slategray;
+                
+            }
+            
+            .composite{
+                display: block;
+                
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                max-width: 500px;
+                margin-top: 200px;
+                margin-bottom: 50px;
+                
+                border-style: outset;
+                border-width: 50px;
+                border-color: darkslategray;
+            }
+            .header{
+                display: block;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                position: relative;
+                font-size: 28px;
+                text-align: center;
+                color: darkred;
+            }
+            p{
+                text-align: center;
+                font-size: 20px;
+                color:darkslategray;
+            }
+
+    
+            #mainWrapper{
+                margin-top: 100px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1101px;
+                border: 6px solid darkslategray;
+                border-radius: 15px;
+                border-style: outset;
+                padding: 8px;
+                background-color: lightslategray;
+            }
+            
+            #rowWrapper{
+                float: left;
+                /*-40 */
+                width: 428px;
+                margin: 20px;
+                
+            }
+            
+             #topRow, #bottomRow{
+                width: 372px;
+                padding: 20px;
+                border: 8px solid;
+                border-radius: 25px;
+                
+            }
+         
+            #topRow{
+                height: 190px;
+                margin-bottom: 20px;
+                border-color: antiquewhite;
+                background-color: beige;
+                
+            }
+            
+            #bottomRow{
+                height: 120px;
+                border-color:darkgray;
+                background-color: lightgray;
+            }
+            
+            #leftColumn{
+                width: 241px;
+                
+                border-color: darkred;
+                background-color: indianred;
+            }
+            
+            #rightColumn{
+                width: 200px;
+                
+                border-color:royalblue;
+                background-color: lightsteelblue;
+            }
+            h2{
+                text-align: center;
+                font-size: 38px;
+
+            }
+            
+            .clearHack:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            .column{
+                float: left;
+                padding: 20px;
+                margin: 20px;
+                height: 390px;
+                border: 8px solid;
+                border-radius: 25px;
+            }
+            
+            .columnHeader{
+               text-align: center;
+                font-size: 24px;
+                text-decoration: underline;
+            }
+
+.tableHead{
+    text-align: center;
+    font-size: 24px;
+}
+.tableTitle{
+    color:#f0f0f0;
+    font-size: 42px;
+    font-family: fantasy;
+}
+
+
+#logo{
+    width: 150px;
+    vertical-align:middle;
+}
+
+table{
+    /*Primary font Montserrat, backup font is sans-serif*/
+    font-family: 'Montserrat', sans-serif;
+}
+
+#compSci{
+    background: darkred;
+}
+
+#math{
+    background: slategray;
+}
+
+.department{
+    text-align: center;
+}
+
+.cardWrapper{
+    background-color:white;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 100px;
+    
+    box-shadow: 10px;
+    border-style: outset;
+    border-width: 32px;
+    border-color: darkslategray;
+}
+
+#cardColumnOne, #cardColumnTwo, #cardColumnThree{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding-left: 10px;
+    padding right 10px;
+}
+
+#cardColumnOne{
+    width:30%;
+    margin: 10px;
+}
+
+#cardColumnOne{
+    width:30%;
+}
+#cardColumnThree{
+    width: 34%;
+}
+.cardComposite{
+    width:90%;
+    border-style: outset;
+    border-width: 10px;
+    border-color: darkred;
+}
+.cardHeader{
+    text-align: center;
+    font-size: 24px;
+}
+
+.blockTable{
+    margin-top: 100px;
+    display: block;
+}
+
+#projectFlexBox{
+
+    display: flex;
+    flex-wrap:wrap-reverse;
+    width: 90%;
+    position: relative;
+    
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding-top: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+#projectFlexBox > div {
+    background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.projectContainer{
+    border-width: 4px;
+    border-style:double;
+    border-color:slategray;
+    border-radius: 25px;
+    width: 400px;
+    height: 250px;
+    background-color:bisque;
+    position: relative;
+    margin: 5% auto 5% auto;
+    box-shadow: 15px;
+    
+}
+
+.projectInfo{
+    display: inline-block;
+    float: right;
+    width: 50%;
+    height 100%;
+    text-align:center;
+}
+
+.projectImage{
+    width: 40%;
+    height: 100%;
+    border-right: 10px;
+    border-right-style: double;
+    border-color: darkred;
+}
+
+.projectTitle{
+    margin: 10px auto 10px auto;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.projectDescription{
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectLink{
+    font-size: 20px;
+    text-decoration: none;
+   
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-weight: bold;
+    color: darkred;
+}
+
+
+/************To-Do-List CSS************/
+#tdlBackground{
+     margin: 0px;
+                padding: 0px;
+                
+                /*Seemless background image made in GIMP for this project. No source needed*/
+                background-image: url(colorableBackground.png);
+                background-color: rgb(168, 231, 255);
+                background-blend-mode: screen;
+                background-attachment: fixed;
+                background-repeat:repeat;
+                background-size: 2048px;
+                transition: 0.6s;
+}
+
+#tdlTableDiv{
+    width: 80%;
+    max-width: 1300px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    height: 40%;
+    
+}
+
+#tdlTable{
+    width: 100%;
+    border-style: outset;
+    border-width: 15px;
+    border-color: #bababa;
+    background-color: #646464;
+
+}
+
+
+#tdlTable th, #tdlTable td{
+    
+    text-align: center;
+    width:2%;
+}
+
+
+
+#tdlTable thead>tr{
+    position: relative;
+    display: block;
+}
+
+#tdlTableBody{
+    display: block;
+  height: 300px;
+  overflow: auto;
+}
+
+
+.checkMark{
+    max-height: 32px;
+    max-width: 32px;
+    background: transparent;
+    border: none !important;
+}
+
+
+#tdlFormDiv{
+    width: 80%;
+    max-width: 1300px;
+    
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: #c7c7c7;
+    border-style: outset;
+    border-width: 15px;
+    border-color: #bababa;
+    
+}
+#tdlForm{
+    width: 100%;
+    display: block;
+}
+
+#tdlForm>div{
+    display: inline-block;
+    float: left;
+    width: 20%;
+}
+
+#tdlForm>div>label, #tdlForm>div>input, #tdlForm>div>select, #tdlForm>div>button{
+    width:90%;
+    text-align: center;
+}
+
+#returnToProjects{
+    text-decoration: none;
+    color: black;
+    font-size: 26px;
+    margin: 40px;
+    margin-top: 100px;
+    margin-left: 10%;
+    font-family: monospace;
+    transition: 0.6s;
+    background-color: #f0f0f0;
+    border-style: outset;
+    border-width: 15px;
+    border-color: #bababa;
+}
+
+#topButtons{
+    margin-top: 50px;
+    
+}
+
+#displayButton{
+    position: absolute;
+    right: 10%;
+    font-family: monospace;
+    font-size: 20px;
+;
+    border-style: outset;
+    border-width: 15px;
+    border-color: #bababa;
+    background-color: #f0f0f0;
+}
+
+/***********PHP CSS*************/
+#PHPFormWrapper{
+    width: 80%;
+    max-width: 1300px;
+
+    
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color:rgba(178, 26, 43, 0.65);
+    border-style: outset;
+    border-width: 15px;
+    border-color: darkslategray;
+    
+    color: aliceblue;
+}
+
+#PHPFormWrapper>form>div label{
+    width:19%;
+    min-width: 200px;
+    font-size: 22px;
+    border-style:solid;
+    border-radius: 30px;
+    background-color: darkslategrey;
+    padding: 5px 10px;;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#PHPFormWrapper>form>div input{
+    width:80%;
+}
+
+#PHPFormWrapper>form>div input, #PHPFormWrapper>form>div select{
+ 
+    font-size: 18px;
+}
+
+#PHPFormWrapper>form{
+    height: 300px;
+}
+#PHPFormWrapper>form div{
+    padding-bottom: 30px;
+}
+#PHPFormWrapper h1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy;
+}
+
+#resultsHeader {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy;
+    text-decoration: underline;
+}
+
+
+/****************AJAX CSS*******************/
+
+#dashboard {
+    width: 80%;
+    max-width: 1300px;
+
+    
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color:rgb(219, 219, 219);
+    border-style: outset;
+    border-width: 15px;
+    border-color: darkslategray;
+    color: aliceblue;
+    
+}
+
+#dashboardCA, #dashboardCT, #dashboardOH {
+    background-color: #bababa;
+    border-style:solid;
+    border-color: darkslategray;
+    border-width: 5px;
+    margin: 20px;
+}
+
+#dashboardCA {
+    width:44.5%;
+    float: left;
+}
+#dashboardCT {
+    width:44.5%;
+    float: right;
+}
+#dashboardOH {
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.loadingIMG{
+    width:10%;
+    margin-left: 45%;
+    margin-right: 45%;
+    visibility:collapse;
+}
+
+
+#dashboardButtons > input{
+    width:19.5%;
+    height: 40px;
+    background-color: #f2f2f2;
+    margin: 0px;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+}
+#dashboardButtons{
+    padding-left: 20%;
+    padding-right:20%;
+    margin-bottom: 50px;
+}
+
+#dashboard > h2, #dashboard >div > h2, #dashboard >div >div  h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+#dashboard >div > h2, #dashboard >div >div  h2 {
+    color:#131f1f;
+}
+
+#dashboard > h2 {
+    color: darkslategray;
+}
+
+
+/***********SSO CSS************/
+
+#ssOWrapper {
+    min-height: 512px;
+    background-color: rgba(98, 98, 98, 0.2);
+    margin: 50px;
+}
+
+#ssOInfoColumn {
+    float: left;
+    padding: 20px;
+    margin: 20px;
+    width: 55%;
+    height: 90%;
+    background-color: #e3e3e3;
+    border: 15px outset #788685;
+}
+#ssOProfileColumn {
+    float: right;
+    padding: 20px;
+    margin: 20px;
+    width: 30%;
+    height: 90%;
+}
+
+.ssOInfoItme {
+    text-align: left;
+}
+
+#ssOProfilePicture {
+    width: 90%;
+    border: 15px outset #788685; 
+}
+
+
+/********************Final Project CSS********************/
+
+@font-face{
+  font-family: "Miami";
+  src: url("Miami.ttf") format("truetype");
+}
+
+
+#CCWrapperDiv {
+/*   margin-top: 8%;*/
+}
+
+
+#CCDisplayDiv {
+    float: left;
+    width: 410px;       /*512 * .8*/
+    height: 533px;      /*666 * .8*/
+    margin: 0px 100px;
+/*    min-height: 1024px;*/
+/*    background-color: lightgray;*/
+    background-image: url(na4nnFinalS20/SBM_Base.png);
+    background-size: 100%;
+    
+    border-style: outset;
+    border-width: 45px;
+    border-color: #5a3114;
+}
+
+#CCInfoDiv {
+    float: left;
+    width: 58%;
+    
+    min-height: 623px;
+    height: auto;
+    background-color: grey;
+}
+
+#characterBase {
+    width: 100%;
+    margin-bottom: -8px;
+}
+.characterPart {
+    width: 100%;
+}
+
+.CColorable {
+    left: 0%;
+    position: absolute;
+    filter:brightness(60%) sepia(100%) hue-rotate(150deg);
+}
+
+#dragMe {
+    left: 370px;
+    top: 250px;
+    
+    
+    position: absolute;
+	border: 2px solid green;
+	border-radius: 20px;
+	box-shadow: 0 0 5px green;
+	width: 60px;
+    height: auto;
+    cursor: move;
+}
+#dragMe h3 {
+	text-align: center;
+}
+#dragMe p {
+	text-indent: 20px;
+}
+
+#ccNavbar {
+    padding: 10px;
+    
+   
+    width: 95.5%;
+    
+    border-style: solid;
+    border-width: 5px;
+    border-color: #808080;
+    
+    border-top-right-radius: 40px;
+/*    border-bottom-right-radius: 40px;*/
+    
+    
+    background-color: #fd69fd;
+}
+
+#characterPreviews {
+    width: 94%;
+    margin: 0px 3% 40px 3%;
+    height: 170px;
+    background-color: rgba(128, 128, 128, 0.23);
+}
+
+/*
+.ccTab,.ccName {
+    display: inline;
+    text-align: right;
+     margin: 10px;
+    }
+*/
+            
+.ccTab{
+    display: inline;
+    text-align: right;
+     margin: 10px;
+    font-family: 'Montserrat', 'sans-serif';
+`   font-size: 20px;
+    padding-left: 50px;
+}
+            
+.ccName{
+    
+    padding: 0px 0px 9px 50px;
+    font-family:"Miami",'Montserrat', 'sans-serif';
+    font-size: 50px;
+}
+
+
+
+
+
