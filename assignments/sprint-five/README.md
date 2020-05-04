@@ -26,3 +26,4 @@ Note: Leave '/na4nnSSOS20/index.php' on the end of your domain name.
 11) Go to Your Domain/na4nnSSOS20/ and sign into your Google Account.
 12) Done
 
+Note: To Logout of Google on either page click the 'Return to Projects' Button.
