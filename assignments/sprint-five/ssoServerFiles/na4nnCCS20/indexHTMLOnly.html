@@ -1,0 +1,96 @@
+<!--
+    IMPORTANT: This file is included only to ensure that the HTML is valid since 'https://validator.w3.org/' cannot
+    properly validate a .php file. This file contains all the HTML from the 'index.php' file and excludes all of the
+    php that controls the login and submit features.
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset="utf-8">
+	   <title>Character Creator</title>
+        
+        
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+        
+        <link rel="stylesheet" href="../styles.css">
+        
+         <script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+        <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+        
+        <script src = "ccJavascript.js"></script>
+        
+       
+        
+    </head>
+    
+    <body class="ccBackground" onload ="onCCLoad()">
+        <div>
+            <ul id = "ccNavbar">
+                <li class = "ccName"><a>Character Creator</a></li>
+                <li class = "ccTab"><a class= "hyper" href="../na4nnProjectsS20.html">Return to Projects</a></li>
+                <li class = "ccTab"><a class= "hyper" href="moreInfo.html">More Info</a></li>
+              
+                <li id = "ccSort">
+                    <label for= "sortType">Sort By:</label>
+                    <select id= "sortType" name= "sortBy" onchange = "updatePreviews(this.value)">
+                        <option value="oldest">Oldest</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </li>
+                
+            </ul>
+        </div>
+        <div id = "characterPreviews" class = "clearHack">
+            
+        </div>
+        
+        <div id = "CCWrapperDiv">
+            <div id = "CCDisplayDiv">
+                <img id ="characterBase" src= "media/defaultCBackground.jpg" alt = "CharacterBase">
+                
+            </div>
+            <div id = "CCInfoDiv">
+                <h1 class ="cInfoHeader">Preset Info:</h1>
+                <h2 id = "characterName" class = "cInfo">No Character Selected</h2>
+                <p id = "characterDescription">Click on a preset to see its information.</p>
+                
+                <h1 class ="cInfoHeader">Customize Character:</h1>
+                <h2 id = "partName" class = "cInfo">No Element Selected</h2>
+                
+                 <button class = "cCustomize" onclick="adjustPartSize(10)">++</button>
+                <span class = "cCustomize">Part Size</span>
+                <button class = "cCustomize" onclick="adjustPartSize(-10)">--</button>
+                
+                <br>
+                 <label for="partHue" class = "cCustomize">Part Hue (between 0 and 360 degrees):</label>
+                <input type="range" id="partHue" name="partHue" min="0" max="360" oninput = "updatePartColor(this.value, 'hue')" onchange = "setPartColor(this.value, 'hue')">
+                
+                <br>
+                <label for="partBrightness" class = "cCustomize">Part Brightness (between 0 and 100%):</label>
+                <input type="range" id="partBrightness" name="partBrightness" min="0" max="360" oninput = "updatePartColor(this.value, 'brightness')" onchange = "setPartColor(this.value, 'brightness')">
+                
+                <br><br>
+                 <form action="/action_page.php">
+                    <label for="newName" class = "cCustomize">Character's Name:</label><br>
+                    <input type="text" id="newName" class = "cCustomize" name = "newName" value=""><br><br>
+                     <label for="newDesc" class = "cCustomize">Character's Description:</label><br>
+                     <textarea id="newDesc" class = "cCustomize" name= "newDesc" ></textarea><br><br>
+                     
+                   
+                </form> 
+                
+            </div>
+            
+        </div>
+        
+        <div id ="ccFooter"></div>
+            
+            
+            
+    </body>
+</html>

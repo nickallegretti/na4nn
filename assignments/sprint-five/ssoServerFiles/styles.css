@@ -652,21 +652,21 @@ table{
     margin: 0px 100px;
 /*    min-height: 1024px;*/
 /*    background-color: lightgray;*/
-    background-image: url(na4nnFinalS20/SBM_Base.png);
     background-size: 100%;
-    
+    background-color: lightgray;
     border-style: outset;
     border-width: 45px;
-    border-color: #5a3114;
+    border-color: darkgray;
 }
 
 #CCInfoDiv {
     float: left;
-    width: 58%;
+    width: calc(91% - 610px);
     
-    min-height: 623px;
+    height: 532px;
     height: auto;
-    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.51);
+
 }
 
 #characterBase {
@@ -724,18 +724,14 @@ table{
     width: 94%;
     margin: 0px 3% 40px 3%;
     height: 170px;
-    background-color: rgba(128, 128, 128, 0.23);
+    background-color: rgba(128, 128, 128, 0.51);
+    white-space:nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-/*
-.ccTab,.ccName {
-    display: inline;
-    text-align: right;
-     margin: 10px;
-    }
-*/
-            
-.ccTab{
+      
+.ccTab, #ccSort{
     display: inline;
     text-align: right;
      margin: 10px;
@@ -743,15 +739,149 @@ table{
 `   font-size: 20px;
     padding-left: 50px;
 }
+
+.ccTab > a,#ccSort {
+    color: white;
+    
+}
+
+
             
 .ccName{
     
     padding: 0px 0px 9px 50px;
     font-family:"Miami",'Montserrat', 'sans-serif';
     font-size: 50px;
+    color: white;
+}
+
+#ccSort {
+    float: right;
+    margin: 10px;
+    padding-right: 25px;
+}
+
+.ccBackground {
+                
+                margin: 0px;
+                padding: 0px;
+                
+                /*Seemless background image made in GIMP for this project. No source needed*/
+                background-image: url("na4nnFinalS20/media/finalBackground.jpg");
+                background-attachment: fixed;
+                background-repeat:repeat;
+                background-size: 2048px;
+                overflow-x: hidden;
+            }
+
+#newDesc {
+    width:90%;
+    height: 80px;
+    
+}
+
+.cInfoHeader, .cInfo {
+    font-family:"Miami",'Montserrat', 'sans-serif';
+    margin: 5px 20px;
+}
+
+/*
+.cInfo {
+    font-family:"Miami",'Montserrat', 'sans-serif';
+    margin: 5px;
+}
+*/
+
+.cCustomize {
+    margin: 8px 15px 5px 20px;
+    font-size: 20px;
+    font-family: 'Montserrat', 'sans-serif';
+    align-content: center;
+    align-self: center;
+
+}
+
+#characterDescription {
+    max-height: 200px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+#characterName {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#ccFooter {
+    background-color: #d0d0d0;
+    color:white;
+    font-family: 'Montserrat', 'sans-serif';
+    
+    border-top-style: double;
+    border-width: 15px;
+    border-color: #fd69fd;
+    
+    max-height: 100px;
+    font-size: 24px;
+
+    margin-top: 47%;
+    padding: 2px;
+}
+
+#videoDiv {
+    float: left;
+    width: 45%;
+    margin: 2.5%;
+    align-content: center;
+}
+
+#video {
+    
+    display: block;
+	width: 800px;
+	margin: 0 auto;
+    border-style:double;
+    border-width: 25px;
+    border-color: darkgray;
+}
+#miInfoDiv {
+    float: right;
+    width: 45%;
+    margin: 2.5%;
+    background-color: rgba(128, 128, 128, 0.51);
+    
+}
+
+#miInfoDiv > h2, #videoDiv > h2{
+    font-family:"Miami",'Montserrat', 'sans-serif';
+}
+#miInfoDiv > p{
+    font-family:'Montserrat', 'sans-serif';
+    font-size: 24px;
 }
 
 
 
+/*********************Character Creator CSS added after Web Dev Submission*/
 
+#ccUserInfoWrapper {
+    
+/*    display: block;*/
+    
+    height: 90%;
+    
+    background-color: rgba(128, 128, 128, 0.51);
+    
+    margin: 5% 50px;
+    
+}
+
+#ccProfileColumn {
+    float: right;
+    padding: 20px;
+    margin: 20px;
+    width: 20%;
+    height: 90%;
+}
 

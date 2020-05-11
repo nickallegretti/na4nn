@@ -1,0 +1,65 @@
+<!--
+References:
+https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages
+https://www.w3schools.com/html/html5_video.asp
+https://stackoverflow.com/questions/10563352/link-to-index-page-of-website
+-->
+
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset="utf-8">
+	   <title>More Info</title>
+    
+        
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+        <link rel="stylesheet" href="../styles.css">
+        
+        <script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+        <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+        
+        <script src = "ccJavascript.js"></script>
+        
+     
+        
+    </head>
+    <body class="ccBackground clearHack">
+       <div>
+            <ul id = "ccNavbar">
+                <li class = "ccName"><a>More Info</a></li>
+                <li class = "ccTab"><a class= "hyper" href="/na4nnCCS20">Home</a></li>
+                
+            </ul>
+        </div>
+        
+<!--        Div that contains tutorial video-->
+        <div id ="videoDiv">
+            <h2>Tutorial Video:</h2>
+            <video id= "video" controls>
+                <source src="media/tutorialVideo.mp4" type="video/mp4">
+                Your browser does not support this video.
+            </video>
+        </div>
+        
+<!--        Div that contains written instructions to use the site-->
+        <div id ="miInfoDiv">
+            <h2>Instructions:</h2>
+            <h2>1) Make Sure You Sign In!</h2>
+            <p>You cannot upload your character preset to the server unless you sign into your google account.</p>
+            
+            <h2>2) Customize Your Character</h2>
+            <p>Personalize your character to your liking. You must change the character from the preset to upload it.</p>
+            
+            <h2>3) Give Your Character a Name and a Description</h2>
+            <p>Your character must have a name and description to be uploaded as a preset.</p>
+            
+            <h2>4) Upload Your Character</h2>
+            <p>Thats it. Now your character is a preset viewable by other users.</p>
+        </div>
+        
+<!--        Footer common element Div-->
+        <div id ="ccFooter">
+            
+        </div>
+    </body>
+</html>
