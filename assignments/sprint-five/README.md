@@ -1,4 +1,4 @@
-Google User Info Display Web App
+Chracter Creator Web App
 Project by Nick Allegretti
 
 Instructions to run Webapp-
