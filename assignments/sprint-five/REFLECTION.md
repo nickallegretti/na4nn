@@ -1,4 +1,4 @@
-Google User Info Display Web App Project by Nick Allegretti
+Character Creator Web App Project by Nick Allegretti
 
 
 In the last sprint I looked at, and incorporated, the HybridAuth and OAuth open source projects.HybridAuth is a PHP library used as an abstract api between a developer's web app and multiple soical apis including Facebook, Twitter and Google. OAuth is an ss0 that gives servers authenticated access to their assets without having to share single logon credit.
