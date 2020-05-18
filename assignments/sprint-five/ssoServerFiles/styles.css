@@ -885,3 +885,26 @@ table{
     height: 90%;
 }
 
+.cLike {
+/*    border: none;*/
+/*    background: none;*/
+    cursor: pointer;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#likeImage {
+    width: 100%;
+}
+
+#likesHeader {
+    visibility: hidden;
+}
+
+#ccSearch {
+    list-style-type: none;
+    float: right;
+    margin: 10px;
+    padding-right: 25px;
+}

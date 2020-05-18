@@ -13,6 +13,14 @@
 
     $sql = "SELECT * FROM characterData";
 
+
+    $search = empty($_GET['search']) ? 'Search' : $_GET['search'];
+
+
+    if($search != "Search") {
+        $sql = $sql . ' WHERE creatorName LIKE "%' . $search . '%"';
+    }
+
 // If sortBy empty sort by newest
     $sortBy = empty($_GET['sortBy']) ? 'newest' : $_GET['sortBy'];
 
@@ -26,7 +34,7 @@
         case 'ratingHigh':
             $sql = $sql . " ORDER BY cLikes DESC";
             break;
-        case 'ratingHigh':
+        case 'ratingLow':
             $sql = $sql . " ORDER BY cLikes ASC";
             break;
     }

@@ -67,11 +67,14 @@ References:
                         echo '<li class = "ccTab"><a class= "hyper" href="logout.php">Log Out</a></li>';
                     }
                 ?>
+                <li id = ccSearch><input id= "searchText" type = "text" placeholder="Search for Creator"><button onclick = "updatePreviews()">Go</button></li>
                 <li id = "ccSort">
                     <label for= "sortType">Sort By:</label>
-                    <select id= "sortType" name= "sortBy" onchange = "updatePreviews(this.value)">
+                    <select id= "sortType" name= "sortBy" onchange = "updatePreviews()">
                         <option value="oldest">Oldest</option>
                         <option value="newest">Newest</option>
+                        <option value="ratingHigh">Most Popular</option>
+                        <option value="ratingLow">Undiscovered</option>
                     </select>
                 </li>
                 
@@ -93,6 +96,16 @@ References:
                 <h1 class ="cInfoHeader">Preset Info:</h1>
                 <h2 id = "characterName" class = "cInfo">No Character Selected</h2>
                 <p id = "characterDescription">Click on a preset to see its information.</p>
+                
+                <h1 id = "likesHeader">
+                    <span class = "cInfoHeader">Likes:</span>
+                    <span id = "cDisplayLikes" class = "cInfoHeader">NumLikes</span>
+                    <?php
+                        if($userProfile) {
+                            echo '<button class = "cLike" onclick= "likePreset()"><img id = "likeImage" src = "media/like.png" alt = "heart"></button>';
+                        }
+                    ?>
+                </h1>
                 
                 <h1 class ="cInfoHeader">Customize Character:</h1>
                 <h2 id = "partName" class = "cInfo">No Element Selected</h2>

@@ -17,11 +17,11 @@
             require_once 'config.php';
             require_once "db.conf";
             
+            $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+        
             try {
-                    $adapter->authenticate();
+                $adapter->authenticate();
                 $userProfile = $adapter->getUserProfile();
-
-                $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
                 
             }
@@ -60,10 +60,14 @@
                 
                 <?php
                     if($userProfile->identifier) {
-                        $sql = 'SELECT COUNT(uId) FROM characterData WHERE uId = "' . $userProfile->identifier . '"';
+                        $sql = 'SELECT COUNT(*), SUM(cLikes) FROM characterData WHERE uId = "' . $userProfile->identifier . '"';
                         $result = $mysqli->query($sql);
-                        $data=mysqli_fetch_assoc($result);
-                        echo '<p class= "ssOInfoItem">Email: ' . $data[0] . '</p>';
+                        $data= $result->fetch_array();
+                        echo '<p class= "ssOInfoItem">You have made ' . $data[0] . ' presets</p>';
+                        echo '<p class= "ssOInfoItem">You have ' . $data[1] . ' likes</p>';
+                        
+                        
+
                     }
                 
                     if($userProfile->email){
@@ -71,7 +75,7 @@
                     }
                 
                 // Close the result set
-                $result->close();
+//                $result->close();
                 // Close the database connection
                 $mysqli->close();
                 ?>
@@ -90,8 +94,6 @@
         
         
         </div>
-        
-        <!--        Footer common element Div-->
-        <div id ="ccFooter"></div>
+
         
     </body>

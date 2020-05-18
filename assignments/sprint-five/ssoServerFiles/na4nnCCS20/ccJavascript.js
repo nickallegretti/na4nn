@@ -2,6 +2,7 @@ var previewMode = true;
             
             var activePart;
             
+            var activePreset;
             
 // Opens Google login popup
             function authPopup(){
@@ -14,7 +15,7 @@ var previewMode = true;
 
             
 // Loads characters from database into preview div. Takes sort by parameter            
-            function loadCharacters(sortType) {
+            function loadCharacters(sortType, search) {
                 var xmlhttp = new XMLHttpRequest();
                 
                 xmlhttp.onreadystatechange = function() {
@@ -42,14 +43,14 @@ var previewMode = true;
                                  if(!previewMode) {
                                      if(confirm("You have unsaved changes. Continue?")) {
         
-                                       loadCharacter(this);
+                                       loadCharacter(this, 'Search');
                                          
                                          
                                      }
                                  }
                                  else{
                                         
-                                     loadCharacter(this);
+                                     loadCharacter(this, 'Search');
                                  }
                                 
                             };
@@ -95,7 +96,7 @@ var previewMode = true;
                     }
                     
                 };
-                xmlhttp.open("GET", "getCharacters.php?sortBy=" + sortType, true);
+                xmlhttp.open("GET", "getCharacters.php?sortBy=" + sortType + "&search=" +search, true);
                 xmlhttp.send();
             }
             
@@ -106,7 +107,12 @@ var previewMode = true;
                 document.getElementById("characterBase").src = previewData.cBaseImageURL;
                 document.getElementById("characterName").innerHTML= previewData.cName;
                 document.getElementById("characterDescription").innerHTML= previewData.cDescription;
-                                     
+                
+                document.getElementById("cDisplayLikes").innerHTML = previewData.cLikes;
+                document.getElementById("likesHeader").style.visibility = "visible";
+                
+                activePreset = previewData;
+                
                 clearParts();
                 loadParts(previewData.cId);
                 document.getElementById("partName").innerHTML = "No Element Selected";
@@ -122,9 +128,17 @@ var previewMode = true;
             }
             
 // Clears preview div, then reloads characters into preview div
-            function updatePreviews(sortType) {
+            function updatePreviews() {
                 clearCharacters();
-                loadCharacters(sortType);
+                
+                if(document.getElementById('searchText').value){
+                    var search = document.getElementById('searchText').value;
+                }
+                else {
+                    var search = "Search";
+                }
+                
+                loadCharacters(document.getElementById('sortType').value, search);
             }
             
 // Loads part data from database and adds them to character creator
@@ -228,12 +242,14 @@ var previewMode = true;
 // Offsets the width of the active part by the value passed in
             function adjustPartSize(addWidth){
                 var newWidth = addWidth + parseInt(activePart.style.width.substring(0,activePart.style.width.length-2),10);
-                activePart.style.width = newWidth +'px';
+                if(newWidth < 200) {
+                    activePart.style.width = newWidth +'px';
                 
-                var pData = JSON.parse(activePart.childNodes[0].innerHTML);
-                pData.pWidth = newWidth;
+                    var pData = JSON.parse(activePart.childNodes[0].innerHTML);
+                    pData.pWidth = newWidth;
                                 
-                activePart.childNodes[0].innerHTML = JSON.stringify(pData);    
+                    activePart.childNodes[0].innerHTML = JSON.stringify(pData);    
+                }
             }
             
             function updatePartColor(newColor, adjustType) {
@@ -318,7 +334,7 @@ var previewMode = true;
                             document.getElementById("newDesc").value = "";
                             window.alert(data);
                             
-                            updatePreviews(document.getElementById("sortType").value);
+                            updatePreviews();
                             previewMode = true;
                         }
                        
@@ -336,6 +352,35 @@ var previewMode = true;
 
 //Onload function for index.html. Wraps the loadCharacters function
             function onCCLoad() {
-                loadCharacters(document.getElementById("sortType").value);
+                loadCharacters(document.getElementById("sortType").value, "Search");
             }
             
+            function likePreset() {
+                
+                if(activePreset) {
+                    
+                    $.ajax({
+                       type: 'POST',
+                       url: 'likeCharacter.php',
+                       data: {"cId" : activePreset.cId},
+                       success: function(data)
+                        {
+//                            window.alert(data);
+                            updateLikes(data);
+                            
+                        }
+                       
+                   });
+                }
+    
+            }
+
+        function updateLikes(newLikes) {
+            updatePreviews();
+            document.getElementById("cDisplayLikes").innerHTML = newLikes;
+        }
+
+
+
+
+
