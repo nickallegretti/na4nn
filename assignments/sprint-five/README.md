@@ -18,12 +18,12 @@ Note: This method requires a EC2 Instance and a dedicated domain.
 5) Add your dedicated domain name to credential's Authorized redirect URIs.
 Note: Must be a dedicated domain. Google will not accept an EC2 instance IP.
 6) Download/Clone 'ssoServerFiles' for repository.
-7) Open 'na4nnSSOS20/config.php'.
+7) Open 'na4nnCCS20/config.php'.
 8) Set the value of 'callback' replace YOURDOMAINHERE with your dedicated domain name.
-Note: Leave '/na4nnSSOS20/index.php' on the end of your domain name.
+Note: Leave '/na4nnCCS20/index.php' on the end of your domain name.
 9) Replace 'YOURID' and 'YOURSECRET' with your Client ID and Client secret from your credential.
 10) Save and close config.php, then move all the contents of ssoServerFiles to your EC2 instance.
-11) Go to Your Domain/na4nnSSOS20/ and sign into your Google Account.
+11) Go to Your Domain/na4nnCCS20/ and sign into your Google Account.
 12) Done
 
 Note: To Logout of Google on either page click the 'Return to Projects' Button.
