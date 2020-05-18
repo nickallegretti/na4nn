@@ -3,7 +3,7 @@ Project by Nick Allegretti
 
 Instructions to run Webapp-
 
-1) Go to 'http://na4nnstudentprojects.com/na4nnSSOS20/' (Note: No 'www.')
+1) Go to 'http://na4nnstudentprojects.com/na4nCCS20/' (Note: No 'www.')
 2) Sign into your Google Account.
 3) Done.
 
